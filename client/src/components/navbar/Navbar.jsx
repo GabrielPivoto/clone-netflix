@@ -16,14 +16,14 @@ const Navbar = () => {
     <div className={isScrolled?"navbar scrolled":"navbar"}>
       <div className="container">
           <div className="left">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" 
+              <img src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/gp-branch/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" 
               alt="" 
               />
-              <span>Homepage</span>
-              <span>Series</span>
-              <span>Movies</span>
-              <span>New and Popular</span>
-              <span>My List</span>
+              <span>Página Principal</span>
+              <span>Séries</span>
+              <span>Filmes Da Hora</span>
+              <span>Em Alta</span>
+              <span>Minha Lista Top</span>
           </div>
           <div className="right">
                 <Search className='icon'/>

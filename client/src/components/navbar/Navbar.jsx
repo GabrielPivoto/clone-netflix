@@ -27,7 +27,7 @@ const Navbar = () => {
           </div>
           <div className="right">
                 <Search className='icon'/>
-                <span>KID</span>
+                <span>Infantil</span>
                 <Notifications className='icon'/>
                 <img src="https://avatars.githubusercontent.com/u/65688445?v=4" alt="" />
                 <div className="profile">

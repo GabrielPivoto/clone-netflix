@@ -20,7 +20,7 @@ export default function Register() {
     <div className='register'>
       <div className="top">
         <div className="wrapper">
-            <img className='logo' src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/gp-branch/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" alt="" />
+            <img className='logo' src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/master/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" alt="" />
             <button className="loginButton">Entrar</button>
         </div>
       </div>

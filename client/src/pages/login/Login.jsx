@@ -8,7 +8,7 @@ export default function Login() {
           <div className="wrapper">
             <img
               className="logo"
-              src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/gp-branch/client/images/f3c25af9edd7c1069c967dd565f75ec6.png"
+              src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/master/client/images/f3c25af9edd7c1069c967dd565f75ec6.png"
               alt=""
             />
           </div>

@@ -16,7 +16,7 @@ const Navbar = () => {
     <div className={isScrolled?"navbar scrolled":"navbar"}>
       <div className="container">
           <div className="left">
-              <img src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/gp-branch/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" 
+              <img src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/master/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" 
               alt="" 
               />
               <span>Página Principal</span>

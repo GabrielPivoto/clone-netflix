@@ -17,3 +17,22 @@ Projeto Web Full Stack para a disciplina C317
 <h4 align="center"> 
 	Status do Projeto 🚧 Em construção 🚧
 </h4>
+
+## Sumário
+* [Pré-Requisitos](#Pré-requisitos)
+* [Como executar](#Como-executar)
+
+## Pré-requitos :white_check_mark: <a name="Pré-requisitos"></a>
+* Instalar o [Nodejs](https://nodejs.org/en/)
+
+## Como executar :rocket: <a name="Como-executar"></a>
+* Clone este repositório na sua máquina;
+* Abra no seu editor a pasta **client**;
+* Execute o seguinte comando pelo terminal:
+	```
+	npm install
+	```
+* Em seguida, para executar o projeto, digite também pelo terminal:
+	```
+	npm start
+	```

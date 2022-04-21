@@ -18,6 +18,10 @@ Projeto Web Full Stack para a disciplina C317
 	Status do Projeto 🚧 Em construção 🚧
 </h4>
 
+## Status 
+* Front-end concluído :white_check_mark: (Encontra-se na pasta client)
+* Back-end 🚧 Em desenvolvimento 🚧
+
 ## Sumário
 * [Pré-Requisitos](#Pré-requisitos)
 * [Como executar](#Como-executar)

@@ -1,0 +1,19 @@
+{
+  "name": "clone-netflix",
+  "version": "1.0.0",
+  "description": "<img align=\"right\" src=\"https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/master/client/images/f3c25af9edd7c1069c967dd565f75ec6.png\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielPivoto/clone-netflix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielPivoto/clone-netflix/issues"
+  },
+  "homepage": "https://github.com/GabrielPivoto/clone-netflix#readme"
+}

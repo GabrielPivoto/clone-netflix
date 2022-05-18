@@ -1,36 +1,60 @@
-import { InfoOutlined, PlayArrow } from '@material-ui/icons'
-import React from 'react'
-import "./featured.scss"
+import { InfoOutlined, PlayArrow } from "@material-ui/icons";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "./featured.scss";
 
-export default function Featured({ type }) {
+export default function Featured({ type, setGenre }) {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(`/movies/random?type=${type}`, {
+          headers: {
+            token:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+          },
+        });
+        setContent(res.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
+
+  console.log(content);
   return (
     <div className="featured">
       {type && (
         <div className="category">
-          <span>{type === "movie"?"Filmes":"Séries"}</span>
-          <select name="genre" id="genre">
-            <option >Gênero</option>
-            <option value="adventure">Aventura</option>
-            <option value="comedy">Comédia</option>
+          <span>{type === "movies" ? "Movies" : "Series"}</span>
+          <select
+            name="genre"
+            id="genre"
+            onChange={(e) => setGenre(e.target.value)}
+          >
+            <option>Genre</option>
+            <option value="adventure">Adventure</option>
+            <option value="comedy">Comedy</option>
             <option value="crime">Crime</option>
-            <option value="fantasy">Fantasia</option>
-            <option value="horror">Terror</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="historical">Historical</option>
+            <option value="horror">Horror</option>
             <option value="romance">Romance</option>
-            <option value="sci-fi">Ficção</option>
+            <option value="sci-fi">Sci-fi</option>
             <option value="thriller">Thriller</option>
-            <option value="western">Faroeste</option>
-            <option value="animation">Animação</option>
+            <option value="western">Western</option>
+            <option value="animation">Animation</option>
             <option value="drama">Drama</option>
-            <option value="documentary">Documentário</option>
+            <option value="documentary">Documentary</option>
           </select>
         </div>
       )}
-      <img src="https://www.inatel.br/imprensa/images/Campus_Inatel.JPG" alt="" />
+      <img src={content.img} alt="" />
       <div className="info">
-      <img src="https://s3-sa-east-1.amazonaws.com/prod-jobsite-files.kenoby.com/uploads/inatel-1610566114-inatelpng.png" alt="" />
-        <span className="desc">
-          Um documentário sobre a melhor faculdade de engenharia do Brasil.
-        </span>
+        <img src={content.imgTitle} alt="" />
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayArrow />

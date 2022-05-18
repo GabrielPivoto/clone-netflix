@@ -1,48 +1,66 @@
-import React, { useRef, useState } from 'react'
-import "./register.scss"
+import axios from "axios";
+import { useRef } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./register.scss";
 
 export default function Register() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const history = useHistory();
 
-    const emailRef = useRef();
-    const passwordRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const usernameRef = useRef();
 
-    const handleStart = () => {
-        setEmail(emailRef.current.value)
-    }
-
-    const handleFinish = () => {
-        setPassword(passwordRef.current.value)
-    }
-
+  const handleStart = () => {
+    setEmail(emailRef.current.value);
+  };
+  const handleFinish = async (e) => {
+    e.preventDefault();
+    setPassword(passwordRef.current.value);
+    setUsername(usernameRef.current.value);
+    try {
+      await axios.post("auth/register", { email,username, password });
+      history.push("/login");
+    } catch (err) {}
+  };
   return (
-    <div className='register'>
+    <div className="register">
       <div className="top">
         <div className="wrapper">
-            <img className='logo' src="https://raw.githubusercontent.com/GabrielPivoto/clone-netflix/master/client/images/f3c25af9edd7c1069c967dd565f75ec6.png" alt="" />
-            <button className="loginButton">Entrar</button>
+          <img
+            className="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+            alt=""
+          />
+          <button className="loginButton">Sign In</button>
         </div>
       </div>
       <div className="container">
-        <h1>Um monte de filme bem da hora.</h1>
-        <h2>Assista onde quiser. Cancele a qualquer momento</h2>
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <h2>Watch anywhere. Cancel anytime.</h2>
         <p>
-          Pronto para começar? Digite seu email
-        </p>{
-            !email ? (
-                <div className="input">
-                <input type="email" placeholder='email' ref={emailRef}/>
-                <button className="registerButton" onClick={handleStart}>Comece Agora</button>
-                </div>
-            ):(
-                <form className="input">
-                <input type="password" placeholder='senha' ref={passwordRef}/>
-                <button className="registerButton" onClick={handleFinish}>Assinar</button>
-                </form>
-            )
-        }
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        {!email ? (
+          <div className="input">
+            <input type="email" placeholder="email address" ref={emailRef} />
+            <button className="registerButton" onClick={handleStart}>
+              Get Started
+            </button>
+          </div>
+        ) : (
+          <form className="input">
+            <input type="username" placeholder="username" ref={usernameRef} />
+            <input type="password" placeholder="password" ref={passwordRef} />
+            <button className="registerButton" onClick={handleFinish}>
+              Start
+            </button>
+          </form>
+        )}
       </div>
     </div>
-  )
+  );
 }

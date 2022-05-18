@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GabrielPivoto/clone-netflix/issues"
   },
-  "homepage": "https://github.com/GabrielPivoto/clone-netflix#readme"
+  "homepage": "https://github.com/GabrielPivoto/clone-netflix#readme",
+  "dependencies": {
+    "react-router-dom": "^5.2.0"
+  }
 }
